@@ -2,9 +2,9 @@
 
 // --- Configurations ---
 #let config = (
-  font: ("Times New Roman", "Liberation Serif"), // Fallback to Liberation if Times isn't available
+  font: ("Times New Roman", "Libertinus Serif"), // Fallback to Libertinus if Times isn't available
   base_size: 12pt,
-  line_height: 1.2em,
+  leading: 0.35em, // Global spacing value (vertical rhythm)
   margin: 0.5in,
 )
 
@@ -21,14 +21,17 @@
   )
 
   set par(
-    leading: 0.2em, // 1em + 0.2em = 1.2em line height approx is standard logic
+    leading: config.leading,
     justify: false,
+    spacing: config.leading, // Space between paragraphs
   )
 
-  // Disable default paragraph spacing to control it manually as per "dense" specs
-  set par(spacing: 0pt)
-  set block(above: 0pt, below: 0pt)
-  set list(spacing: 0pt)
+  // Enforce global block spacing for vertical rhythm
+  set block(above: config.leading, below: config.leading)
+  set list(spacing: config.leading)
+
+  // Hyperlinks should be standard black text
+  show link: set text(fill: black)
 
   content
 }
