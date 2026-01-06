@@ -1,0 +1,30 @@
+name: Build PDF
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v3
+        with:
+            typst-version: '0.12.0'
+
+      - name: Build PDF
+        run: |
+            typst compile --root . template/classic-resume.typ pdfs/classic-resume.pdf
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: classic-resume
+          path: pdfs/classic-resume.pdf
