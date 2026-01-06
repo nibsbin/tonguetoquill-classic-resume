@@ -4,7 +4,10 @@
 // --- Utility Functions ---
 
 // Horizontal Rule
-#let hrule = line(length: 100%, stroke: 0.75pt)
+#let hrule = {
+  line(length: 100%, stroke: 0.75pt)
+  v(-2pt)
+}
 
 // --- Component Exports ---
 
@@ -17,14 +20,20 @@
 
   set text(size: config.base_size, weight: "regular")
 
+  vgap(config.entry_spacing)
+
   // Contacts
   // Separator: ' ❖ '
-  let separator = " " + "❖" + " "
-  let contact_text = contacts.join(separator)
+  for i in range(0, contacts.len()) {
+    let contact = contacts.at(i)
+    if i > 0 {
+      [~~#text("❖", size: 8pt)~~#contact]
+    } else {
+      [#contact]
+    }
+  }
 
-  vgap(config.entry_spacing)
-  block(contact_text)
-  vgap(config.entry_spacing)
+  //block(contact_text)
 }
 
 
