@@ -1,9 +1,13 @@
+// Import the resume template components
 #import "@preview/ttq-classic-resume:0.1.0": (
   entry_block, header_block, key_value_grid, project_entry, resume, section_header, simple_grid,
 )
 
+// Apply the resume styling to the document
 #show: resume
 
+// Create your header with name and contact information
+// Contacts are separated by ❖ symbols automatically
 #header_block(
   name: "John Doe",
   contacts: (
@@ -15,8 +19,11 @@
   ),
 )
 
+// Section headers create titled sections with an underline
 #section_header("Active Certifications")
 
+// Use simple_grid for lists of items (certifications, awards, etc.)
+// Adjust 'columns' to control the grid layout
 #simple_grid(
   items: (
     "Offensive Security Certified Professional (OSCP)",
@@ -29,6 +36,8 @@
 
 #section_header("Skills")
 
+// Use key_value_grid for categorized information like skills
+// Each item has a 'key' (category) and 'value' (items in that category)
 #key_value_grid(
   items: (
     (key: "Programming", value: "Python, R, JS, C#, Rust, PowerShell, CI/CD"),
@@ -41,6 +50,10 @@
 
 #section_header("Work Experience")
 
+// Use entry_block for work experience, education, or achievements
+// headingLeft: Company/School name, headingRight: Dates
+// subheadingLeft: Job title/Degree, subheadingRight: Location
+// bullets: Array of accomplishments (optional)
 #entry_block(
   headingLeft: "Templar Archives Research Division",
   headingRight: "August 2024 – Present",
@@ -90,6 +103,8 @@
 
 #section_header("Education")
 
+// Education entries use the same entry_block component
+// Use empty bullets: () if you don't need bullet points
 #entry_block(
   headingLeft: "Carnegie Mellon University",
   headingRight: "December 2025",
@@ -166,6 +181,8 @@
 
 #section_header("Projects")
 
+// Use project_entry for personal projects
+// name: Project name, url: Project URL (optional), bullets: Descriptions (optional)
 #project_entry(
   name: "TongueToQuill",
   url: "https://tonguetoquill.com",

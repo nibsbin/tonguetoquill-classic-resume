@@ -4,33 +4,34 @@
 [![typst-universe](https://img.shields.io/badge/Typst-Universe-aqua)](https://typst.app/universe/package/tonguetoquill-classic)
 [![nibs](https://img.shields.io/badge/author-Nibs-white?logo=github)](https://github.com/nibsbin)
 
-A clean and modern resume template for Typst.
+A clean, professional resume template for Typst with a refined, dense layout optimized for single-page resumes.
 
 Maintained by [tonguetoquill.com](https://www.tonguetoquill.com).
 
-## Usage
+## Preview
 
-### Local Development
+<p align="center">
+  <img src="thumbnail.png" alt="Resume Template Preview" width="600">
+</p>
 
-1.  **Install Typst**: Follow instructions at [typst.app](https://typst.app).
-2.  **Compile**: Run the build script.
+See [the template](template/resume.typ) for complete working resume.
 
-    ```bash
-    ./scripts/build.sh
-    ```
+## Quick Start
 
-### Using the Template
+**Using Typst CLI:**
 
-Import components from the package:
-
-```typst
-#import "@preview/tonguetoquill-classic:0.1.0": resume, header_block, section_header, entry_block, key_value_grid, simple_grid
-
-#show: resume
-
-// ... content ...
+```bash
+typst init @preview/ttq-classic-resume:0.1.0
+typst compile resume.typ
 ```
-**(Note: Local imports should be used until published)**
+
+**Using [typst.app](https://typst.app):**
+
+Click "Start from template" and search for `ttq-classic-resume`.
+
+## Documentation
+
+For documentation and example, see the [template](template/resume.typ).
 
 ## License
 
