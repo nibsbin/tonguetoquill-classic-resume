@@ -185,7 +185,7 @@
 // name: Project name, url: Project URL (optional), bullets: Descriptions (optional)
 #project_entry(
   name: "TongueToQuill",
-  url: "https://tonguetoquill.com",
+  url: "https://www.tonguetoquill.com",
   bullets: (
     "Rich markdown editor for perfectly formatted USAF and USSF documents with Claude MCP integration.",
   ),

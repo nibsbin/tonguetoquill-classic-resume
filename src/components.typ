@@ -19,11 +19,12 @@
 
   // Contacts
   // Separator: ' ❖ '
-  let separator = " " + str(sym.diamond.filled) + " "
+  let separator = " " + "❖" + " "
   let contact_text = contacts.join(separator)
 
   vgap(config.entry_spacing)
   block(contact_text)
+  vgap(config.entry_spacing)
 }
 
 

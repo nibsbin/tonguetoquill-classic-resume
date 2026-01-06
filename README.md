@@ -6,7 +6,7 @@
 
 A clean, professional resume template for Typst with a refined, dense layout optimized for single-page resumes.
 
-Maintained by [tonguetoquill.com](https://www.tonguetoquill.com).
+Maintained by [TongueToQuill](https://www.tonguetoquill.com).
 
 ## Preview
 
