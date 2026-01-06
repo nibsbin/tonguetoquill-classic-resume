@@ -1,0 +1,222 @@
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-10pt} % Adjust the value as needed
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-1pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+        \textbf{\Huge \scshape John Doe} \\
+        \vspace{1pt}
+        \small +1 (123) 456 7890 $|$ \href{mailto:john@doe.com}{\textbf{john@doe.com}} $|$ \href{https://johndoe.com}{\textbf{Portfolio}} $|$ \href{github.com/shubhamku044/la-resume}{\textbf{Github}} $|$ \href{linkedin.com/in/johndoe}{\textbf{LinkedIn}} $|$ \href{leetcode.com/johndoe}{\textbf{LeetCode}} $|$ \href{codeforces.com/johndoe}{\textbf{Codeforces}} \\
+        \small Kolkata, India
+    }}
+\end{center}
+
+
+          \section{education}
+          \resumeSubHeadingListStart
+          
+            \resumeSubheading
+            {Massachusetts Institute of Technology}{Cambridge, MA, USA}
+            {Bachelor of Science in Computer Science; CGPA: 3.8/4.0}
+            {Sep. 2018 -- June 2022}
+          
+            \resumeSubheading
+            {Central High School}{Springfield, IL, USA}
+            {High School Diploma; Percentage: 92.5\%}
+            {Sep. 2014 -- June 2018}
+          
+            \resumeSubheading
+            {Stanford University}{Stanford, CA, USA}
+            {Master of Science in Artificial Intelligence; CGPA: 3.9/4.0}
+            {Sep. 2022 -- June 2024}
+          
+          \resumeSubHeadingListEnd
+        
+
+          \section{Skills}
+          \resumeSubHeadingListStart
+          \resumeItemListStart
+          
+            \resumeItem{\textbf{Programming skills}: JavaScript, TypeScript, Python, Java, C\#}
+          
+
+            \resumeItem{\textbf{databases}: PostgreSQL, MongoDB, Redis, SQLite}
+          
+
+            \resumeItem{\textbf{frameworks}: React, Node.js, Express.js, Django, Spring Boot}
+          
+
+            \resumeItem{\textbf{developerTools}: Git, Docker, Webpack, VS Code, Jenkins}
+          
+          \resumeItemListEnd
+          \resumeSubHeadingListEnd
+        
+
+          \section{experience}
+          
+            \resumeSubHeadingListStart
+            \resumeProjectHeading
+            {\textbf{SCALE AI (Outlier) - C++ AI Trainer (Freelance)}}{Oct 2024}
+            \resumeItemListStart
+            \resumeItem{Conducted A/B testing on 50+ AI model responses, optimizing performance using C++.}
+\resumeItem{Created 10+ complex prompts to improve model training and achieve higher accuracy.}
+\resumeItem{Evaluated over 200 AI responses for accuracy, relevance, and quality across predefined categories.}
+\resumeItem{Provided targeted feedback that led to improvement in AI decision-making and output quality.}
+            \resumeItemListEnd
+            \resumeSubHeadingListEnd
+          
+
+            \resumeSubHeadingListStart
+            \resumeProjectHeading
+            {\textbf{Pyccel}}{Jan 2024}
+            \resumeItemListStart
+            \resumeItem{Added support for numpy.max and numpy.min in the C printer, including macro definitions, AST updates, and Fortran support for complex numbers.}
+\resumeItem{Resolved issue \#1645 by replacing deprecated AST classes with Constant (Python 3.8+), ensuring compatibility with newer Python versions.}
+            \resumeItemListEnd
+            \resumeSubHeadingListEnd
+          
+
+            \resumeSubHeadingListStart
+            \resumeProjectHeading
+            {\textbf{TechCorp - Software Engineer Intern}}{May 2023 -- Aug 2023}
+            \resumeItemListStart
+            \resumeItem{Developed a RESTful API using Node.js, reducing server response time by 30\%.}
+\resumeItem{Collaborated with a team of 5 to implement CI/CD pipelines using Jenkins and Docker.}
+\resumeItem{Optimized database queries in PostgreSQL, improving data retrieval speed by 25\%.}
+            \resumeItemListEnd
+            \resumeSubHeadingListEnd
+          
+        
+
+          \section{projects}
+          
+            \resumeSubHeadingListStart
+            \resumeProjectHeading
+            {\textbf{Personal Portfolio}}
+            {\href{https://johndoe.com}{Link}}
+            \resumeItemListStart
+            \resumeItem{Developed a responsive portfolio website using Next.js, TypeScript, and Tailwind CSS to showcase projects and skills.}
+\resumeItem{Designed a clean UI, improving load time by 20\%.}
+\resumeItem{Deployed on Vercel, achieving 99\% uptime.}
+            \resumeItemListEnd
+            \resumeSubHeadingListEnd
+          
+
+            \resumeSubHeadingListStart
+            \resumeProjectHeading
+            {\textbf{E-Commerce Platform}}
+            {\href{https://github.com/johndoe/ecommerce}{Github Link}}
+            \resumeItemListStart
+            \resumeItem{Built a full-stack app with React and Node.js, increasing user engagement by 30\%.}
+\resumeItem{Integrated Stripe, processing 1000+ transactions with 99\% success rate.}
+\resumeItem{Optimized backend, reducing API latency by 25\%.}
+            \resumeItemListEnd
+            \resumeSubHeadingListEnd
+          
+        
+
+\section{honorsAndAwards}
+\resumeSubHeadingListStart
+\resumeItem{Achieved a 2123 rating (Knight) and ranked in the top 1.5\% of LeetCode users\hfill \href{https://leetcode.com/johndoe}{\underline{Profile}}}
+    \resumeItem{Solved 2000+ DSA problems across all platforms}
+    \resumeItem{Selected for Amazon Machine Learning Summer School 2024 among top 5\% of applicants\hfill \href{https://aws.amazon.com/education/ml-summer-school}{\underline{Certificate}}}
+    \resumeItem{Qualified for Round 2 in Meta Hacker Cup 2024, placing in top 10\%\hfill \href{https://www.facebook.com/codingcompetitions/hacker-cup/2024}{\underline{Link}}}
+    \resumeItem{Won regional coding competition, beating 95\% of participants}
+\resumeSubHeadingListEnd
+        
+
+\end{document}

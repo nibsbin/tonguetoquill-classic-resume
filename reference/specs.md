@@ -12,7 +12,7 @@ This specification document defines the visual structure, typography, and layout
 
 * **Grid:** Single-column primary layout.
 * **Alignment:**
-* Headers: Centered.
+* Headers (Name, Contact Info): Left-aligned.
 * Section Titles: Left-aligned.
 * Body Content: Left-aligned.
 * Metadata (Dates/Locations): Right-aligned.
@@ -38,13 +38,15 @@ This specification document defines the visual structure, typography, and layout
 * **Name Element:**
 * Text: Full Name (Optionally with "Nickname" in quotes).
 * Style: Bold, Serif.
-* Spacing: Bottom padding ~4pt.
+* Alignment: Left-aligned.
+* Spacing: Bottom padding ~2pt (very tight).
 
 
 * **Contact Info Element:**
 * Layout: Single line (wrapping only if necessary).
-* Separator: A filled diamond glyph (`❖` or `♦`) surrounded by spaces.
-* Content flow: Email `♦` Phone `♦` GitHub/Portfolio `♦` LinkedIn `♦` Location.
+* Alignment: Left-aligned.
+* Separator: A filled diamond glyph (`❖`) surrounded by spaces.
+* Content flow: Email `❖` Phone `❖` GitHub/Portfolio `❖` LinkedIn `❖` Location.
 * Style: Base font size, Regular weight.
 
 
@@ -60,59 +62,59 @@ This specification document defines the visual structure, typography, and layout
 * **Width:** 100% of the text block.
 * **Spacing:** Small margin before the title; minimal margin between title and line; small margin between line and content.
 
-#### C. The Experience/Education Entry (The "Quad" Block)
+#### C. The Entry Block
 
-This component uses a "four-corner" alignment strategy to maximize space.
+A data-driven component for any dual-aligned entry (Experience, Education, Projects, etc.).
 
-* **Row 1 (Primary Info):**
-* **Left Anchor:** Organization/School Name.
-* *Style:* **Bold**.
+**Data Input:**
+| Field | Required | Style | Alignment |
+| --- | --- | --- | --- |
+| `headingLeft` | Yes | **Bold** | Left |
+| `headingRight` | Yes | **Bold** | Right |
+| `subheadingLeft` | No | *Italic* | Left |
+| `subheadingRight` | No | *Italic* | Right |
+| `bullets` | No | Regular | Left (hanging indent) |
 
+**Rendering Logic:**
+* If `subheadingLeft` or `subheadingRight` is provided, render a second row with italic styling.
+* If omitted, the block renders as a single heading row + optional bullets.
 
-* **Right Anchor:** Date Range (e.g., "May 2025 – July 2025").
-* *Style:* **Bold**.
-* *Alignment:* Right-justified against the margin.
+**Bullet Styling:**
+* **Character:** Small square (`▪`) or standard disk (`•`).
+* **Indentation:** Hanging indent; text wraps cleanly under the first line.
 
+---
 
+#### D. Key-Value Grid
 
+A data-driven component for labeled lists (e.g., Skills).
 
-* **Row 2 (Secondary Info):**
-* **Left Anchor:** Job Title / Degree Name.
-* *Style:* *Italic*.
+**Data Input:**
+| Field | Required | Description |
+| --- | --- | --- |
+| `items` | Yes | Array of `{key: string, value: string}` pairs |
+| `columns` | No | Number of columns (default: 2) |
 
+**Rendering:**
+* **Key:** Bold, on its own line above the value.
+* **Value:** Regular weight, below the key.
+* Columns are evenly distributed across the text block width.
 
-* **Right Anchor:** Location (City, State).
-* *Style:* *Italic*.
-* *Alignment:* Right-justified against the margin.
+---
 
+#### E. Simple Grid
 
+A data-driven component for flat lists (e.g., Certifications).
 
+**Data Input:**
+| Field | Required | Description |
+| --- | --- | --- |
+| `items` | Yes | Array of strings |
+| `columns` | No | Number of columns (default: 2) |
 
-* **Row 3 (Content):**
-* **List Style:** Bulleted list.
-* **Bullet Character:** Small square (`▪`) or standard disk (`•`). The image uses a small square style.
-* **Indentation:** Hanging indent. Bullets align flush with the left text margin or slightly indented; text wraps cleanly.
-
-
-
-#### D. The Skills/Certifications Block
-
-This section differs from the standard narrative block. It utilizes a labeled list format or a 2-column invisible grid.
-
-* **Format:** Key-Value Pair.
-* **Key (Category):**
-* Example: "Programming", "Cloud", "IT & Cybersecurity".
-* Style: **Bold**.
-
-
-* **Value (List):**
-* Example: "Python, R, JS, C#..."
-* Style: Regular.
-
-
-* **Layout:**
-* If items are short: Display as 2 columns (Left column categories aligned left; Right column categories aligned to center-point).
-* If items are long: Display as stacked single lines.
+**Rendering:**
+* Each item is regular weight.
+* Columns are evenly distributed across the text block width.
 
 
 
@@ -122,12 +124,12 @@ To achieve the "Elegant/Dense" look, use the following relative spacing units:
 
 | Element Relationship | Spacing |
 | --- | --- |
-| Between Header and First Section | 2.0x Line Height |
-| Between Section Title and Horizontal Rule | 0.2x Line Height |
-| Between Horizontal Rule and Section Content | 0.5x Line Height |
-| Between Experience Entries | 1.0x Line Height |
-| Between Bullet Points | 0.0x to 0.2x (Minimal extra padding) |
-| Between Sections | 1.5x Line Height |
+| Between Header and First Section | 1.5x Line Height |
+| Between Section Title and Horizontal Rule | 0.1x Line Height |
+| Between Horizontal Rule and Section Content | 0.3x Line Height |
+| Between Experience Entries | 0.8x Line Height |
+| Between Bullet Points | 0.0x (No extra padding) |
+| Between Sections | 1.2x Line Height |
 
 ### 5. Special Elements
 
