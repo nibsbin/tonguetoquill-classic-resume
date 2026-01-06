@@ -13,7 +13,7 @@
   set align(left)
 
   // Name
-  block(below: 2pt, text(size: 24pt, weight: "bold", name))
+  block(text(size: 24pt, weight: "bold", name))
 
   set text(size: config.base_size, weight: "regular")
 
@@ -22,19 +22,17 @@
   let separator = " " + str(sym.diamond.filled) + " "
   let contact_text = contacts.join(separator)
 
-  block(below: 0pt, contact_text)
+  block(contact_text)
 }
 
 
 // Section Header
 #let section_header(title, extra: none) = {
-  // Spacing before section: 1.5x line height (1.5 * 14.4pt = 21.6pt)
-  v(12pt) // Tuned down from 21.6pt based on visual density
-
+  v(5pt)
   set align(left)
 
   // Title
-  block(below: 2pt, {
+  block({
     text(weight: "bold", upper(title))
     if extra != none {
       text(weight: "bold", " " + extra)
@@ -42,9 +40,6 @@
   })
 
   hrule
-
-  // Margin between line and content: 0.3x line height (4.32pt)
-  v(4.32pt)
 }
 
 // Entry Block
@@ -55,8 +50,7 @@
   subheadingRight: none,
   bullets: none,
 ) = {
-  // Spacing between entries: 0.8x line height = 11.52pt
-  block(below: 11.52pt, breakable: true, {
+  block(breakable: true, {
     // Header Grid (combined for alignment and spacing)
     let cells = (
       align(left, text(weight: "bold", headingLeft)),
@@ -101,7 +95,7 @@
 
   grid(
     columns: (1fr,) * columns,
-    row-gutter: 5pt,
+    row-gutter: config.leading,
     column-gutter: 1em,
     ..items.map(cell)
   )
@@ -111,7 +105,7 @@
 #let simple_grid(items: (), columns: 2) = {
   grid(
     columns: (1fr,) * columns,
-    row-gutter: 5pt,
+    row-gutter: config.leading,
     column-gutter: 1em,
     ..items // items are just content/strings
   )
