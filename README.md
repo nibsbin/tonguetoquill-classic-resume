@@ -1,6 +1,12 @@
 # Tonguetoquill Classic Resume
 
-A classic resume template for Typst.
+[![github-repository](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/nibsbin/tonguetoquill-classic-resume)
+[![typst-universe](https://img.shields.io/badge/Typst-Universe-aqua)](https://typst.app/universe/package/tonguetoquill-classic)
+[![nibs](https://img.shields.io/badge/author-Nibs-white?logo=github)](https://github.com/nibsbin)
+
+A clean and modern resume template for Typst.
+
+Maintained by [tonguetoquill.com](https://www.tonguetoquill.com).
 
 ## Usage
 

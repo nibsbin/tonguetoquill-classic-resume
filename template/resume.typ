@@ -1,4 +1,6 @@
-#import "../src/lib.typ": entry_block, header_block, key_value_grid, project_entry, resume, section_header, simple_grid
+#import "@preview/ttq-classic-resume:1.0.0": (
+  entry_block, header_block, key_value_grid, project_entry, resume, section_header, simple_grid,
+)
 
 #show: resume
 
