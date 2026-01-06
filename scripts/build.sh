@@ -23,7 +23,7 @@ compile_template() {
 echo "Building templates..."
 echo
 
-compile_template "classic-resume"
+compile_template "resume"
 
 echo
 echo "All compilations completed."
