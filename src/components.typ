@@ -98,7 +98,7 @@
 
   grid(
     columns: (1fr,) * columns,
-    row-gutter: config.entry_spacing,
+    row-gutter: config.leading + config.entry_spacing,
     column-gutter: 1em,
     ..items.map(cell)
   )

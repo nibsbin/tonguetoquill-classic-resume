@@ -12,7 +12,7 @@ compile_template() {
   local output="pdfs/${template}.pdf"
 
   echo "Compiling ${template}..."
-  if typst compile --root . "$input" "$output"; then
+  if typst compile --font-path template/assets --root . "$input" "$output"; then
     echo "  ✓ Generated: $(pwd)/$output"
   else
     echo "  ✗ Failed to compile $template"

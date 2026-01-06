@@ -2,7 +2,7 @@
 
 // --- Configurations ---
 #let config = (
-  font: "Inter",
+  font: "eb garamond",
   base_size: 12pt,
   leading: 0.5em, // Global spacing value (vertical rhythm)
   section_spacing: 5pt,
