@@ -129,7 +129,12 @@
       align(left, text(weight: "bold", name)),
       align(right, {
         if url != none {
-          text(size: 8pt, font: "Courier New", link(url)[#url])
+          // Only hyperlink if it looks like a URL
+          if url.starts-with("http") {
+            text(size: 8pt, font: "Courier New", link(url)[#url])
+          } else {
+            text(size: 8pt, font: "Courier New", url)
+          }
         }
       }),
     )
