@@ -1,7 +1,7 @@
 # Tonguetoquill Classic Resume
 
-[![github-repository](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/nibsbin/tonguetoquill-classic-resume)
-[![typst-universe](https://img.shields.io/badge/Typst-Universe-aqua)](https://typst.app/universe/package/tonguetoquill-classic)
+[![github-repository](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/nibsbin/ttq-classic-resume)
+[![typst-universe](https://img.shields.io/badge/Typst-Universe-aqua)](https://typst.app/universe/package/ttq-classic-resume)
 [![nibs](https://img.shields.io/badge/author-Nibs-white?logo=github)](https://github.com/nibsbin)
 
 A clean, professional resume template for Typst with a refined, dense layout optimized for single-page resumes.
@@ -14,7 +14,7 @@ Maintained by [tonguetoquill.com](https://www.tonguetoquill.com).
   <img src="thumbnail.png" alt="Resume Template Preview" width="600">
 </p>
 
-See [the template](template/resume.typ) for complete working resume.
+See the [template](template/resume.typ) for complete working resume.
 
 ## Quick Start
 

@@ -3,7 +3,7 @@ name = "ttq-classic-resume"
 version = "0.1.0"
 compiler = "0.14.2"
 entrypoint = "src/lib.typ"
-repository = "https://github.com/nibsbin/tonguetoquill-classic-resume"
+repository = "https://github.com/nibsbin/ttq-classic-resume"
 authors = ["Nibs"]
 license = "MIT"
 description = "A clean and modern resume."
@@ -23,4 +23,4 @@ disciplines = ["business", "computer-science", "engineering", "communication"]
 [template]
 path = "template"
 entrypoint = "resume.typ"
-thumbnail = "assets/thumbnail.png"
+thumbnail = "thumbnail.png"
