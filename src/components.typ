@@ -1,5 +1,5 @@
 // components.typ
-#import "layout.typ": config
+#import "layout.typ": config, vgap
 
 // --- Utility Functions ---
 
@@ -13,7 +13,7 @@
   set align(left)
 
   // Name
-  block(text(size: 24pt, weight: "bold", name))
+  block(text(size: 18pt, weight: "bold", name))
 
   set text(size: config.base_size, weight: "regular")
 
@@ -28,7 +28,7 @@
 
 // Section Header
 #let section_header(title, extra: none) = {
-  v(5pt)
+  vgap(config.section_spacing)
   set align(left)
 
   // Title
@@ -50,7 +50,8 @@
   subheadingRight: none,
   bullets: none,
 ) = {
-  block(breakable: true, {
+  vgap(config.entry_spacing)
+  block(breakable: false, {
     // Header Grid (combined for alignment and spacing)
     let cells = (
       align(left, text(weight: "bold", headingLeft)),
@@ -72,8 +73,8 @@
     if bullets != none {
       // Intentionally tight spacing for refined "dense" look
       list(
-        marker: box(fill: black, width: 3.5pt, height: 3.5pt, radius: 0pt, baseline: 20%),
-        body-indent: 0.5em,
+        marker: box(fill: black, width: 3.5pt, height: 3.5pt, radius: 0pt, baseline: .5em),
+        body-indent: 0.8em,
         indent: 0em,
         ..bullets,
       )
@@ -83,6 +84,7 @@
 
 // Key-Value Grid (Skills)
 #let key_value_grid(items: (), columns: 2) = {
+  vgap(config.entry_spacing)
   // items is array of (key: "...", value: "...") dictionary
 
   let cell(item) = {
@@ -103,10 +105,43 @@
 
 // Simple Grid (Certifications)
 #let simple_grid(items: (), columns: 2) = {
+  vgap(config.entry_spacing)
   grid(
     columns: (1fr,) * columns,
     row-gutter: config.leading,
     column-gutter: 1em,
     ..items // items are just content/strings
   )
+}
+
+// Project Entry (PROJECTS section)
+#let project_entry(
+  name: "",
+  url: none,
+  bullets: none,
+) = {
+  vgap(config.entry_spacing)
+  block(breakable: false, {
+    // Header Grid
+    grid(
+      columns: (1fr, auto),
+      row-gutter: config.leading,
+      align(left, text(weight: "bold", name)),
+      align(right, {
+        if url != none {
+          text(size: 8pt, font: "Courier New", link(url)[#url])
+        }
+      }),
+    )
+
+    // Bullets (Optional)
+    if bullets != none {
+      list(
+        marker: box(fill: black, width: 3.5pt, height: 3.5pt, radius: 0pt, baseline: .5em),
+        body-indent: 0.8em,
+        indent: 0em,
+        ..bullets,
+      )
+    }
+  })
 }

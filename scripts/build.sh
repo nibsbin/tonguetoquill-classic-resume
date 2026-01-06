@@ -9,7 +9,7 @@ mkdir -p pdfs
 compile_template() {
   local template=$1
   local input="template/${template}.typ"
-  local output="pdfs/${template}.png"
+  local output="pdfs/${template}.pdf"
 
   echo "Compiling ${template}..."
   if typst compile --root . "$input" "$output"; then

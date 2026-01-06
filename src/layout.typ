@@ -4,9 +4,14 @@
 #let config = (
   font: ("Times New Roman", "Libertinus Serif"), // Fallback to Libertinus if Times isn't available
   base_size: 12pt,
-  leading: 0.35em, // Global spacing value (vertical rhythm)
+  leading: 0.5em, // Global spacing value (vertical rhythm)
+  section_spacing: 5pt,
+  entry_spacing: 5pt,
   margin: 0.5in,
 )
+
+// --- Utility Functions ---
+#let vgap(amount) = v(amount)
 
 // --- Resume Show Rule (Global Setup) ---
 #let resume(content) = {
