@@ -1,6 +1,6 @@
 # Tonguetoquill Classic Resume
 
-A classic resume template for Typst, implementing the "Carnegie Classic" specification.
+A classic resume template for Typst.
 
 ## Usage
 

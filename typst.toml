@@ -1,12 +1,24 @@
 [package]
 name = "tonguetoquill-classic"
 version = "0.1.0"
+compiler = "0.14.2"
 entrypoint = "src/lib.typ"
+repository = "https://github.com/nibsbin/tonguetoquill-classic-resume"
 authors = ["Nibs"]
 license = "MIT"
-description = "A classic resume template based on the Carnegie Classic specifications."
+description = "A clean and modern resume."
 
-categories = ["office"]
+keywords = [
+    "resume",
+    "cv",
+    "curriculum vitae",
+    "job",
+    "career",
+    "professional",
+    "template",
+]
+categories = ["cv"]
+disciplines = ["business", "computer-science", "engineering", "communication"]
 
 [template]
 path = "template/classic-resume.typ"
