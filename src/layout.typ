@@ -2,7 +2,7 @@
 
 // --- Configurations ---
 #let config = (
-  font: ("Times New Roman", "Libertinus Serif"), // Fallback to Libertinus if Times isn't available
+  font: "Inter",
   base_size: 12pt,
   leading: 0.5em, // Global spacing value (vertical rhythm)
   section_spacing: 5pt,

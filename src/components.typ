@@ -22,6 +22,7 @@
   let separator = " " + str(sym.diamond.filled) + " "
   let contact_text = contacts.join(separator)
 
+  vgap(config.entry_spacing)
   block(contact_text)
 }
 
@@ -97,7 +98,7 @@
 
   grid(
     columns: (1fr,) * columns,
-    row-gutter: config.leading,
+    row-gutter: config.entry_spacing,
     column-gutter: 1em,
     ..items.map(cell)
   )
