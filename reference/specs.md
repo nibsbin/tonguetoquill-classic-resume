@@ -10,7 +10,7 @@ This specification document defines the visual structure, typography, and layout
 * Left/Right: 0.5".
 * *Note:* The design prioritizes information density; whitespace is functional, not decorative.
 
-* **Grid:** Single-column primary layout.
+* **Grid:** Global single-column layout. Sub-sections (e.g., Skills) may use multi-column grids.
 * **Alignment:**
 * Headers (Name, Contact Info): Left-aligned.
 * Section Titles: Left-aligned.
@@ -21,7 +21,7 @@ This specification document defines the visual structure, typography, and layout
 ### 2. Typography Strategy
 
 * **Font Family:** Traditional Serif (Examples: Times New Roman, Garamond, Cambria, or LaTeX Computer Modern).
-* **Base Font Size:** 11pt.
+* **Base Font Size:** 12pt.
 * **Line Height (Leading):** Tight (1.2).
 * **Visual Hierarchy:**
 1. **Name:** Largest size (~24pt), Bold.
@@ -47,11 +47,11 @@ This specification document defines the visual structure, typography, and layout
 * Alignment: Left-aligned.
 * Separator: A filled diamond glyph (`❖`) surrounded by spaces.
 * Content flow: Email `❖` Phone `❖` GitHub/Portfolio `❖` LinkedIn `❖` Location.
-* Style: Base font size, Regular weight.
+* Style: Base font size (12pt), Regular weight.
 
 
 
-#### B. The Section Divider
+#### B. The Section Header
 
 * **Structure:**
 1. **Title:** Uppercase, Bold, Left-aligned.
@@ -60,7 +60,7 @@ This specification document defines the visual structure, typography, and layout
 
 * **Stroke Weight:** Fine/Hairline (0.5pt to 1px).
 * **Width:** 100% of the text block.
-* **Spacing:** Small margin before the title; minimal margin between title and line; small margin between line and content.
+* **Spacing:** Significant gap before the title (see Section 4); minimal margin between title and line; small margin between line and content.
 
 #### C. The Entry Block
 
@@ -70,24 +70,25 @@ A data-driven component for any dual-aligned entry (Experience, Education, Proje
 | Field | Required | Style | Alignment |
 | --- | --- | --- | --- |
 | `headingLeft` | Yes | **Bold** | Left |
-| `headingRight` | Yes | **Bold** | Right |
+| `headingRight` | No | **Bold** | Right |
 | `subheadingLeft` | No | *Italic* | Left |
 | `subheadingRight` | No | *Italic* | Right |
 | `bullets` | No | Regular | Left (hanging indent) |
 
 **Rendering Logic:**
 * If `subheadingLeft` or `subheadingRight` is provided, render a second row with italic styling.
-* If omitted, the block renders as a single heading row + optional bullets.
+* If omitted, the block renders as a single heading row.
+* Bullets are always rendered if provided.
 
 **Bullet Styling:**
-* **Character:** Small square (`▪`) or standard disk (`•`).
+* **Character:** Small square (`▪`).
 * **Indentation:** Hanging indent; text wraps cleanly under the first line.
 
 ---
 
 #### D. Key-Value Grid
 
-A data-driven component for labeled lists (e.g., Skills).
+A data-driven component for labeled lists (e.g., Skills). This is distinct from the "Entry Block" (Section C) and is used specifically for organizing dense lists of items, often in columns.
 
 **Data Input:**
 | Field | Required | Description |

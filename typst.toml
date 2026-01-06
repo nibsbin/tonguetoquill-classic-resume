@@ -1,0 +1,14 @@
+[package]
+name = "tonguetoquill-classic"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["Nibs"]
+license = "MIT"
+description = "A classic resume template based on the Carnegie Classic specifications."
+
+categories = ["office"]
+
+[template]
+path = "main.typ"
+entrypoint = "main.typ"
+thumbnail = "thumbnail.png"
