@@ -1,5 +1,5 @@
 [package]
-name = "tonguetoquill-classic"
+name = "ttq-classic-resume"
 version = "0.1.0"
 compiler = "0.14.2"
 entrypoint = "src/lib.typ"

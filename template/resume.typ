@@ -1,4 +1,4 @@
-#import "@preview/ttq-classic-resume:1.0.0": (
+#import "@preview/ttq-classic-resume:0.1.0": (
   entry_block, header_block, key_value_grid, project_entry, resume, section_header, simple_grid,
 )
 
