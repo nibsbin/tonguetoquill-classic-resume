@@ -21,10 +21,10 @@ jobs:
 
       - name: Build PDF
         run: |
-            typst compile --root . template/classic-resume.typ pdfs/classic-resume.pdf
+            typst compile --root . template/resume.typ pdfs/resume.pdf
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: classic-resume
-          path: pdfs/classic-resume.pdf
+          path: pdfs/resume.pdf
