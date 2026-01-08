@@ -1,6 +1,6 @@
 // Import the resume template components
 #import "@preview/ttq-classic-resume:0.1.0": (
-  entry_block, header_block, key_value_grid, project_entry, resume, section_header, simple_grid,
+  timeline_entry, resume_header, category_grid, project_entry, resume, section_header, item_grid,
 )
 
 // Apply the resume styling to the document
@@ -8,7 +8,7 @@
 
 // Create your header with name and contact information
 // Contacts are separated by ❖ symbols automatically
-#header_block(
+#resume_header(
   name: "John Doe",
   contacts: (
     "john.doe@example.com",
@@ -22,9 +22,9 @@
 // Section headers create titled sections with an underline
 #section_header("Active Certifications")
 
-// Use simple_grid for lists of items (certifications, awards, etc.)
+// Use item_grid for lists of items (certifications, awards, etc.)
 // Adjust 'columns' to control the grid layout
-#simple_grid(
+#item_grid(
   items: (
     "Offensive Security Certified Professional (OSCP)",
     "GIAC Cyber Threat Intelligence (GCTI)",
@@ -36,9 +36,9 @@
 
 #section_header("Skills")
 
-// Use key_value_grid for categorized information like skills
+// Use category_grid for categorized information like skills
 // Each item has a 'key' (category) and 'value' (items in that category)
-#key_value_grid(
+#category_grid(
   items: (
     (key: "Programming", value: "Python, R, JS, C#, Rust, PowerShell, CI/CD"),
     (key: "Data Science", value: "ML/statistics, TensorFlow, AI Engineering"),
@@ -50,11 +50,11 @@
 
 #section_header("Work Experience")
 
-// Use entry_block for work experience, education, or achievements
+// Use timeline_entry for work experience, education, or achievements
 // headingLeft: Company/School name, headingRight: Dates
 // subheadingLeft: Job title/Degree, subheadingRight: Location
 // body: Native Typst content including lists (optional)
-#entry_block(
+#timeline_entry(
   headingLeft: "Templar Archives Research Division",
   headingRight: "August 2024 – Present",
   subheadingLeft: "Psionic Research Analyst",
@@ -65,7 +65,7 @@
   ],
 )
 
-#entry_block(
+#timeline_entry(
   headingLeft: "Terran Dominion Ghost Academy",
   headingRight: "May 2025 – July 2025",
   subheadingLeft: "Covert Ops Trainee",
@@ -77,7 +77,7 @@
   ],
 )
 
-#entry_block(
+#timeline_entry(
   headingLeft: "Abathur's Evolution Pit",
   headingRight: "June 2023 – July 2023",
   subheadingLeft: "Biomass Research Intern",
@@ -88,7 +88,7 @@
   ],
 )
 
-#entry_block(
+#timeline_entry(
   headingLeft: "Raynor's Raiders",
   headingRight: "January 2018 – June 2020",
   subheadingLeft: "Combat Engineer",
@@ -105,14 +105,14 @@
 
 // Education entries use the same entry_block component
 // Omit the body parameter if you don't need content
-#entry_block(
+#timeline_entry(
   headingLeft: "Carnegie Mellon University",
   headingRight: "December 2025",
   subheadingLeft: "Master of Information Technology Strategy",
   subheadingRight: "Pittsburgh, PA",
 )
 
-#entry_block(
+#timeline_entry(
   headingLeft: "United States Air Force Academy",
   headingRight: "May 2024",
   subheadingLeft: "BS, Data Science",
@@ -124,14 +124,14 @@
   ],
 )
 
-#entry_block(
+#timeline_entry(
   headingLeft: "Western Governors University",
   headingRight: "April 2022",
   subheadingLeft: "BS, Cybersecurity and Information Assurance",
   subheadingRight: "Remote",
 )
 
-#entry_block(
+#timeline_entry(
   headingLeft: "Community College of the Air Force",
   headingRight: "February 2019",
   subheadingLeft: "AS, Information Systems Technology",
@@ -140,7 +140,7 @@
 
 #section_header("Cyber Competition")
 
-#entry_block(
+#timeline_entry(
   headingLeft: "1st in SANS Academy Cup 2024",
   body: [
     - Competed as the Delogrand Web Exploit SME, solving SQLi, API, and HTTP packet crafting problems.
@@ -148,7 +148,7 @@
   ],
 )
 
-#entry_block(
+#timeline_entry(
   headingLeft: "1st in NCX 2023",
   body: [
     - Developed strategies, defensive scripts, and exploits for the Cyber Combat event.
@@ -156,7 +156,7 @@
   ],
 )
 
-#entry_block(
+#timeline_entry(
   headingLeft: "1st in SANS Academy Cup 2023",
   body: [
     - Competed as the Delogrand Web Exploit SME, solving XSS, XXE, SQLi, and HTTP crafting problems.
@@ -164,14 +164,14 @@
   ],
 )
 
-#entry_block(
+#timeline_entry(
   headingLeft: "1st in RMCS 2023",
   body: [
     - Competed as the Delogrand Web Exploit SME, solving obfuscated JS, Wasm, XSS, and SQLi problems.
   ],
 )
 
-#entry_block(
+#timeline_entry(
   headingLeft: "1st in NCX 2022",
   body: [
     - Trained and strategized teams for the Cyber Combat event.
