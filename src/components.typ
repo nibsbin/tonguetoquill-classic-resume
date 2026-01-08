@@ -143,7 +143,7 @@
         if url != none {
           // Only hyperlink if it looks like a URL
           if url.starts-with("http") {
-            text(size: 8pt, font: "Courier New", link(url)[#url])
+            text(size: 8pt, font: "Courier New", emph(link(url)[#url]))
           } else {
             text(size: 8pt, font: "Courier New", url)
           }
