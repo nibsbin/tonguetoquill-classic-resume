@@ -1,7 +1,5 @@
 // Import the resume template components
-#import "@preview/ttq-classic-resume:0.1.0": (
-  timeline_entry, resume_header, category_grid, project_entry, resume, section_header, item_grid,
-)
+#import "@preview/ttq-classic-resume:0.1.0": project_entry, resume, resume_header, section_header, table, timeline_entry
 
 // Apply the resume styling to the document
 #show: resume
@@ -22,28 +20,28 @@
 // Section headers create titled sections with an underline
 #section_header("Active Certifications")
 
-// Use item_grid for lists of items (certifications, awards, etc.)
-// Adjust 'columns' to control the grid layout
-#item_grid(
+// Use table for lists of items (certifications, awards, etc.)
+// The table component auto-detects flat vs categorized structure
+#table(
   items: (
-    "Offensive Security Certified Professional (OSCP)",
-    "GIAC Cyber Threat Intelligence (GCTI)",
-    "CompTIA CASP+, CySA+, Sec+, Net+, A+, Proj+",
-    "GIAC Machine Learning Engineer (GMLE)",
+    [Offensive Security Certified Professional (OSCP)],
+    [GIAC Cyber Threat Intelligence (GCTI)],
+    [CompTIA CASP+, CySA+, Sec+, Net+, A+, Proj+],
+    [GIAC Machine Learning Engineer (GMLE)],
   ),
   columns: 2,
 )
 
 #section_header("Skills")
 
-// Use category_grid for categorized information like skills
-// Each item has a 'key' (category) and 'value' (items in that category)
-#category_grid(
+// Use table for categorized information like skills
+// Each item has a 'category' and 'text'
+#table(
   items: (
-    (key: "Programming", value: "Python, R, JS, C#, Rust, PowerShell, CI/CD"),
-    (key: "Data Science", value: "ML/statistics, TensorFlow, AI Engineering"),
-    (key: "IT & Cybersecurity", value: "AD DS, Splunk, Metasploit, Wireshark, Nessus"),
-    (key: "Cloud", value: "AWS EC2/S3, Helm, Docker, Serverless"),
+    (category: "Programming", text: [Python, R, JS, C\#, Rust, PowerShell, CI/CD]),
+    (category: "Data Science", text: [ML/statistics, TensorFlow, AI Engineering]),
+    (category: "IT & Cybersecurity", text: [AD DS, Splunk, Metasploit, Wireshark, Nessus]),
+    (category: "Cloud", text: [AWS EC2/S3, Helm, Docker, Serverless]),
   ),
   columns: 2,
 )
