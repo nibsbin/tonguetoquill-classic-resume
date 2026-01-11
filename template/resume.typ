@@ -35,13 +35,13 @@
 #section_header("Skills")
 
 // Use table for categorized information like skills
-// Each item has a 'key' (category) and 'value' (array of items)
+// Each item has a 'key' (category) and 'value' (content)
 #table(
   items: (
-    (key: "Programming", value: ([Python], [R], [JS], [C\#], [Rust], [PowerShell], [CI/CD])),
-    (key: "Data Science", value: ([ML/statistics], [TensorFlow], [AI Engineering])),
-    (key: "IT & Cybersecurity", value: ([AD DS], [Splunk], [Metasploit], [Wireshark], [Nessus])),
-    (key: "Cloud", value: ([AWS EC2/S3], [Helm], [Docker], [Serverless])),
+    (key: "Programming", value: [Python, R, JS, C\#, Rust, PowerShell, CI/CD]),
+    (key: "Data Science", value: [ML/statistics, TensorFlow, AI Engineering]),
+    (key: "IT & Cybersecurity", value: [AD DS, Splunk, Metasploit, Wireshark, Nessus]),
+    (key: "Cloud", value: [AWS EC2/S3, Helm, Docker, Serverless]),
   ),
   columns: 2,
 )

@@ -96,7 +96,7 @@
 
 // Unified Table Component
 // Auto-detects structure from item shape:
-//   Categorized: ((key: content, value: (content, ...)), ...)
+//   Categorized: ((key: content, value: content), ...)
 //   Flat: (content, content, ...)
 #let table(items: (), columns: 2) = {
   if items.len() == 0 { return }
@@ -113,8 +113,7 @@
       block({
         text(weight: "bold", item.key)
         linebreak()
-        // Join nested content array with commas
-        item.value.join(", ")
+        item.value
       })
     } else {
       item
@@ -138,12 +137,8 @@
 
 // Category Grid (Skills, categorized information)
 #let category_grid(items: (), columns: 2) = {
-  // Convert old API to new structure
-  let new_items = items.map(it => (
-    key: it.key,
-    value: (it.value,), // Wrap value in array
-  ))
-  table(items: new_items, columns: columns)
+  // Convert old API to new structure (value stays as-is)
+  table(items: items, columns: columns)
 }
 
 // Item Grid (Certifications, lists, etc.)
