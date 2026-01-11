@@ -96,14 +96,14 @@
 
 // Unified Table Component
 // Auto-detects structure from item shape:
-//   Categorized: ((key: content, value: content), ...)
+//   Categorized: ((category: content, text: content), ...)
 //   Flat: (content, content, ...)
 #let table(items: (), columns: 2) = {
   if items.len() == 0 { return }
 
   // Auto-detect from item shape
   let is_categorized = (
-    type(items.at(0)) == dictionary and "key" in items.at(0)
+    type(items.at(0)) == dictionary and "category" in items.at(0)
   )
 
   vgap(config.entry_spacing)
@@ -111,9 +111,9 @@
   let render_cell(item) = {
     if is_categorized {
       block({
-        text(weight: "bold", item.key)
+        text(weight: "bold", item.category)
         linebreak()
-        item.value
+        item.text
       })
     } else {
       item
@@ -134,17 +134,6 @@
 
 // Backward compatibility shims (deprecated)
 // These will be removed in a future major version
-
-// Category Grid (Skills, categorized information)
-#let category_grid(items: (), columns: 2) = {
-  // Convert old API to new structure (value stays as-is)
-  table(items: items, columns: columns)
-}
-
-// Item Grid (Certifications, lists, etc.)
-#let item_grid(items: (), columns: 2) = {
-  table(items: items, columns: columns)
-}
 
 
 // Project Entry (PROJECTS section)
