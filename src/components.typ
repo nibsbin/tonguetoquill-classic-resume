@@ -9,6 +9,11 @@
   v(-2pt)
 }
 
+// --- Constants ---
+#let bullet_marker_width = 3.5pt
+#let bullet_body_indent = 0.8em
+#let bullet_text_offset = bullet_marker_width + bullet_body_indent
+
 // --- Component Exports ---
 
 // Resume Header
@@ -84,8 +89,8 @@
     if body != none {
       // Style native Typst lists to match previous bullet styling
       show list: set list(
-        marker: box(fill: black, width: 3.5pt, height: 3.5pt, radius: 0pt, baseline: .5em),
-        body-indent: 0.8em,
+        marker: box(fill: black, width: bullet_marker_width, height: bullet_marker_width, radius: 0pt, baseline: .5em),
+        body-indent: bullet_body_indent,
         indent: 0em,
       )
 
@@ -120,15 +125,18 @@
     }
   }
 
-  grid(
-    columns: (1fr,) * columns,
-    row-gutter: if is_categorized {
-      config.leading + config.entry_spacing
-    } else {
-      config.leading
-    },
-    column-gutter: 1em,
-    ..items.map(render_cell),
+  pad(
+    left: bullet_text_offset,
+    grid(
+      columns: (1fr,) * columns,
+      row-gutter: if is_categorized {
+        config.leading + config.entry_spacing
+      } else {
+        config.leading
+      },
+      column-gutter: 1em,
+      ..items.map(render_cell),
+    ),
   )
 }
 
@@ -165,8 +173,8 @@
     if body != none {
       // Style native Typst lists to match previous bullet styling
       show list: set list(
-        marker: box(fill: black, width: 3.5pt, height: 3.5pt, radius: 0pt, baseline: .5em),
-        body-indent: 0.8em,
+        marker: box(fill: black, width: bullet_marker_width, height: bullet_marker_width, radius: 0pt, baseline: .5em),
+        body-indent: bullet_body_indent,
         indent: 0em,
       )
 
