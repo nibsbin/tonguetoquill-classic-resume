@@ -77,7 +77,7 @@
     grid(
       columns: (1fr, auto),
       row-gutter: config.leading, // Use global vertical rhythm
-      ..cells
+      ..cells,
     )
 
     // Body content (Optional)
@@ -94,37 +94,63 @@
   })
 }
 
-// Category Grid (Skills, categorized information)
-#let category_grid(items: (), columns: 2) = {
-  vgap(config.entry_spacing)
-  // items is array of (key: "...", value: "...") dictionary
+// Unified Table Component
+// Auto-detects structure from item shape:
+//   Categorized: ((key: content, value: (content, ...)), ...)
+//   Flat: (content, content, ...)
+#let table(items: (), columns: 2) = {
+  if items.len() == 0 { return }
 
-  let cell(item) = {
-    block({
-      text(weight: "bold", item.key)
-      linebreak()
-      item.value
-    })
+  // Auto-detect from item shape
+  let is_categorized = (
+    type(items.at(0)) == dictionary and "key" in items.at(0)
+  )
+
+  vgap(config.entry_spacing)
+
+  let render_cell(item) = {
+    if is_categorized {
+      block({
+        text(weight: "bold", item.key)
+        linebreak()
+        // Join nested content array with commas
+        item.value.join(", ")
+      })
+    } else {
+      item
+    }
   }
 
   grid(
     columns: (1fr,) * columns,
-    row-gutter: config.leading + config.entry_spacing,
+    row-gutter: if is_categorized {
+      config.leading + config.entry_spacing
+    } else {
+      config.leading
+    },
     column-gutter: 1em,
-    ..items.map(cell)
+    ..items.map(render_cell),
   )
+}
+
+// Backward compatibility shims (deprecated)
+// These will be removed in a future major version
+
+// Category Grid (Skills, categorized information)
+#let category_grid(items: (), columns: 2) = {
+  // Convert old API to new structure
+  let new_items = items.map(it => (
+    key: it.key,
+    value: (it.value,), // Wrap value in array
+  ))
+  table(items: new_items, columns: columns)
 }
 
 // Item Grid (Certifications, lists, etc.)
 #let item_grid(items: (), columns: 2) = {
-  vgap(config.entry_spacing)
-  grid(
-    columns: (1fr,) * columns,
-    row-gutter: config.leading,
-    column-gutter: 1em,
-    ..items // items are just content/strings
-  )
+  table(items: items, columns: columns)
 }
+
 
 // Project Entry (PROJECTS section)
 #let project_entry(
