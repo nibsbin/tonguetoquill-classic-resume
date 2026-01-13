@@ -1,12 +1,12 @@
 // Import the resume template components
-#import "@preview/ttq-classic-resume:0.1.0": project_entry, resume, resume_header, section_header, table, timeline_entry
+#import "@preview/ttq-classic-resume:0.1.0": project-entry, resume, resume-header, section-header, table, timeline-entry
 
 // Apply the resume styling to the document
 #show: resume
 
 // Create your header with name and contact information
 // Contacts are separated by ❖ symbols automatically
-#resume_header(
+#resume-header(
   name: "John Doe",
   contacts: (
     "john.doe@example.com",
@@ -18,7 +18,7 @@
 )
 
 // Section headers create titled sections with an underline
-#section_header("Active Certifications")
+#section-header("Active Certifications")
 
 // Use table for lists of items (certifications, awards, etc.)
 // The table component auto-detects flat vs categorized structure
@@ -32,7 +32,7 @@
   columns: 2,
 )
 
-#section_header("Skills")
+#section-header("Skills")
 
 // Use table for categorized information like skills
 // Each item has a 'category' and 'text'
@@ -46,28 +46,28 @@
   columns: 2,
 )
 
-#section_header("Work Experience")
+#section-header("Work Experience")
 
-// Use timeline_entry for work experience, education, or achievements
-// headingLeft: Company/School name, headingRight: Dates
-// subheadingLeft: Job title/Degree, subheadingRight: Location
+// Use timeline-entry for work experience, education, or achievements
+// heading-left: Company/School name, heading-right: Dates
+// subheading-left: Job title/Degree, subheading-right: Location
 // body: Native Typst content including lists (optional)
-#timeline_entry(
-  headingLeft: "Templar Archives Research Division",
-  headingRight: "August 2024 – Present",
-  subheadingLeft: "Psionic Research Analyst",
-  subheadingRight: "Aiur",
+#timeline-entry(
+  heading-left: "Templar Archives Research Division",
+  heading-right: "August 2024 – Present",
+  subheading-left: "Psionic Research Analyst",
+  subheading-right: "Aiur",
   body: [
     - Analyzed Khala disruption patterns following Amon's corruption, developing countermeasures to protect remaining neural link infrastructure.
     - Building automated threat detection pipelines using Khaydarin crystal arrays to monitor Void energy signatures across the sector.
   ],
 )
 
-#timeline_entry(
-  headingLeft: "Terran Dominion Ghost Academy",
-  headingRight: "May 2025 – July 2025",
-  subheadingLeft: "Covert Ops Trainee",
-  subheadingRight: "Tarsonis (Remote)",
+#timeline-entry(
+  heading-left: "Terran Dominion Ghost Academy",
+  heading-right: "May 2025 – July 2025",
+  subheading-left: "Covert Ops Trainee",
+  subheading-right: "Tarsonis (Remote)",
   body: [
     - Developed tactical HUD displays for Ghost operatives integrating real-time Zerg hive cluster intelligence.
     - Created automated target acquisition systems for nuclear launch protocols; involved cloaking field calibration and EMP targeting.
@@ -75,22 +75,22 @@
   ],
 )
 
-#timeline_entry(
-  headingLeft: "Abathur's Evolution Pit",
-  headingRight: "June 2023 – July 2023",
-  subheadingLeft: "Biomass Research Intern",
-  subheadingRight: "Char",
+#timeline-entry(
+  heading-left: "Abathur's Evolution Pit",
+  heading-right: "June 2023 – July 2023",
+  subheading-left: "Biomass Research Intern",
+  subheading-right: "Char",
   body: [
     - Developed tracking algorithms for Overlord surveillance networks; supported pattern-of-life analysis for Terran outpost elimination.
     - Prototyped a creep tumor optimization tool featuring swarm pathfinding, resource node mapping, and hatchery placement recommendations.
   ],
 )
 
-#timeline_entry(
-  headingLeft: "Raynor's Raiders",
-  headingRight: "January 2018 – June 2020",
-  subheadingLeft: "Combat Engineer",
-  subheadingRight: "Mar Sara",
+#timeline-entry(
+  heading-left: "Raynor's Raiders",
+  heading-right: "January 2018 – June 2020",
+  subheading-left: "Combat Engineer",
+  subheading-right: "Mar Sara",
   body: [
     - Administered Hyperion shipboard systems, SCV maintenance protocols, and bunker defense automation for 30,000+ colonists.
     - Developed siege tank targeting scripts, delivered Zerg threat briefs, and integrated supply depot optimization procedures.
@@ -99,22 +99,22 @@
   ],
 )
 
-#section_header("Education")
+#section-header("Education")
 
 // Education entries use the same entry_block component
 // Omit the body parameter if you don't need content
-#timeline_entry(
-  headingLeft: "Carnegie Mellon University",
-  headingRight: "December 2025",
-  subheadingLeft: "Master of Information Technology Strategy",
-  subheadingRight: "Pittsburgh, PA",
+#timeline-entry(
+  heading-left: "Carnegie Mellon University",
+  heading-right: "December 2025",
+  subheading-left: "Master of Information Technology Strategy",
+  subheading-right: "Pittsburgh, PA",
 )
 
-#timeline_entry(
-  headingLeft: "United States Air Force Academy",
-  headingRight: "May 2024",
-  subheadingLeft: "BS, Data Science",
-  subheadingRight: "Colorado Springs, CO",
+#timeline-entry(
+  heading-left: "United States Air Force Academy",
+  heading-right: "May 2024",
+  subheading-left: "BS, Data Science",
+  subheading-right: "Colorado Springs, CO",
   body: [
     - Distinguished Graduate (top 10%); Chinese language minor (L2+/R1 on DLPT).
     - Delogrand deputy captain, cyber combat lead, and web exploit SME.
@@ -122,65 +122,65 @@
   ],
 )
 
-#timeline_entry(
-  headingLeft: "Western Governors University",
-  headingRight: "April 2022",
-  subheadingLeft: "BS, Cybersecurity and Information Assurance",
-  subheadingRight: "Remote",
+#timeline-entry(
+  heading-left: "Western Governors University",
+  heading-right: "April 2022",
+  subheading-left: "BS, Cybersecurity and Information Assurance",
+  subheading-right: "Remote",
 )
 
-#timeline_entry(
-  headingLeft: "Community College of the Air Force",
-  headingRight: "February 2019",
-  subheadingLeft: "AS, Information Systems Technology",
-  subheadingRight: "Remote",
+#timeline-entry(
+  heading-left: "Community College of the Air Force",
+  heading-right: "February 2019",
+  subheading-left: "AS, Information Systems Technology",
+  subheading-right: "Remote",
 )
 
-#section_header("Cyber Competition")
+#section-header("Cyber Competition")
 
-#timeline_entry(
-  headingLeft: "1st in SANS Academy Cup 2024",
+#timeline-entry(
+  heading-left: "1st in SANS Academy Cup 2024",
   body: [
     - Competed as the Delogrand Web Exploit SME, solving SQLi, API, and HTTP packet crafting problems.
     - Also placed first in SANS Core Netwars competition.
   ],
 )
 
-#timeline_entry(
-  headingLeft: "1st in NCX 2023",
+#timeline-entry(
+  heading-left: "1st in NCX 2023",
   body: [
     - Developed strategies, defensive scripts, and exploits for the Cyber Combat event.
     - Analyzed logs with Bash and Python for the Data Analysis event.
   ],
 )
 
-#timeline_entry(
-  headingLeft: "1st in SANS Academy Cup 2023",
+#timeline-entry(
+  heading-left: "1st in SANS Academy Cup 2023",
   body: [
     - Competed as the Delogrand Web Exploit SME, solving XSS, XXE, SQLi, and HTTP crafting problems.
     - Took first place against rival Army, Navy, and Coast Guard service academy teams.
   ],
 )
 
-#timeline_entry(
-  headingLeft: "1st in RMCS 2023",
+#timeline-entry(
+  heading-left: "1st in RMCS 2023",
   body: [
     - Competed as the Delogrand Web Exploit SME, solving obfuscated JS, Wasm, XSS, and SQLi problems.
   ],
 )
 
-#timeline_entry(
-  headingLeft: "1st in NCX 2022",
+#timeline-entry(
+  heading-left: "1st in NCX 2022",
   body: [
     - Trained and strategized teams for the Cyber Combat event.
   ],
 )
 
-#section_header("Projects")
+#section-header("Projects")
 
-// Use project_entry for personal projects
+// Use project-entry for personal projects
 // name: Project name, url: Project URL (optional), body: Native Typst content (optional)
-#project_entry(
+#project-entry(
   name: "TongueToQuill",
   url: "https://www.tonguetoquill.com",
   body: [
@@ -188,7 +188,7 @@
   ],
 )
 
-#project_entry(
+#project-entry(
   name: "Quillmark",
   url: "https://github.com/nibsbin/quillmark",
   body: [
@@ -196,7 +196,7 @@
   ],
 )
 
-#project_entry(
+#project-entry(
   name: "RoboRA",
   url: "https://github.com/nibsbin/RoboRA",
   body: [
@@ -204,7 +204,7 @@
   ],
 )
 
-#project_entry(
+#project-entry(
   name: "Scraipe",
   url: "https://pypi.org/project/scraipe/",
   body: [
@@ -212,7 +212,7 @@
   ],
 )
 
-#project_entry(
+#project-entry(
   name: "Quandry",
   url: "https://quandry.streamlit.app/",
   body: [
@@ -221,7 +221,7 @@
   ],
 )
 
-#project_entry(
+#project-entry(
   name: "Streamlit Scroll Navigation",
   url: "https://pypi.org/project/streamlit-scroll-navigation/",
   body: [
@@ -229,7 +229,7 @@
   ],
 )
 
-#project_entry(
+#project-entry(
   name: "ADSBLookup",
   url: "<closed source>",
   body: [
@@ -237,7 +237,7 @@
   ],
 )
 
-#project_entry(
+#project-entry(
   name: "OSCP LaTeX Report Template",
   url: "https://github.com/SnpM/oscp-latex-report-template",
   body: [
@@ -245,7 +245,7 @@
   ],
 )
 
-#project_entry(
+#project-entry(
   name: "Lockstep Framework",
   url: "https://github.com/SnpM/LockstepFramework",
   body: [
