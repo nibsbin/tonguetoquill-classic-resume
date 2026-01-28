@@ -1,4 +1,4 @@
-# Tonguetoquill Classic Resume
+# <img src="https://www.tonguetoquill.com/favicon.svg" alt="Tongue to Quill (TTQ) Logo" style="width:24px;"/> TTQ Classic Resume
 
 [![github-repository](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/nibsbin/ttq-classic-resume)
 [![typst-universe](https://img.shields.io/badge/Typst-Universe-aqua)](https://typst.app/universe/package/ttq-classic-resume)
@@ -6,7 +6,7 @@
 
 A clean, professional resume template for Typst with a refined, dense layout optimized for single-page resumes.
 
-Maintained by [TongueToQuill](https://www.tonguetoquill.com).
+Maintained by [TongueToQuill](https://www.tonguetoquill.com) 
 
 ## Preview
 
